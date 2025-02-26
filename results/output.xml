@@ -1,80 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-02-25T23:34:09.275600" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-02-26T09:25:44.256884" rpa="false" schemaversion="5">
 <suite id="s1" name="Aprendendo Robot" source="/home/marcelo/Desenvolvimento/Aprendendo_Robot">
 <suite id="s1-s1" name="Get Faker Api" source="/home/marcelo/Desenvolvimento/Aprendendo_Robot/get_faker_api.robot">
-<test id="s1-s1-t1" name="Realizando primeiro GET no Faker API" line="9">
+<test id="s1-s1-t1" name="Teste com If Else" line="47">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-02-25T23:34:09.353040" level="INFO">Creating Session using : alias=faker_api, url=https://fakerapi.it/api/v1/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-02-26T09:25:44.337565" level="INFO">Creating Session using : alias=faker_api, url=https://fakerapi.it/api/v1/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>alias=faker_api</arg>
 <arg>url=https://fakerapi.it/api/v1/</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-02-25T23:34:09.352601" elapsed="0.000676"/>
+<status status="PASS" start="2025-02-26T09:25:44.337325" elapsed="0.000529"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-02-25T23:34:10.689809" level="INFO">GET Request : url=https://fakerapi.it/api/v1/addresses?_quantity=1 
- path_url=/api/v1/addresses?_quantity=1 
+<msg time="2025-02-26T09:25:45.790771" level="INFO">GET Request : url=https://fakerapi.it/api/v1/addresses?_quantity=2 
+ path_url=/api/v1/addresses?_quantity=2 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-02-25T23:34:10.690286" level="INFO">GET Response : url=https://fakerapi.it/api/v1/addresses?_quantity=1 
+<msg time="2025-02-26T09:25:45.790985" level="INFO">GET Response : url=https://fakerapi.it/api/v1/addresses?_quantity=2 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Powered-By': 'PHP/8.3.8', 'Cache-Control': 'no-cache, private', 'Date': 'Wed, 26 Feb 2025 02:34:10 GMT', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'Access-Control-Allow-Origin': '*', 'X-UA-Compatible': 'IE=Edge,chrome=1', 'Content-Encoding': 'gzip'} 
- body={"status":"OK","code":200,"locale":"en_US","seed":null,"total":1,"data":[{"id":1,"street":"1122 Vida Run Apt. 259","streetName":"Amalia Common","buildingNumber":"787","city":"Niastad","zipcode":"69288","country":"Liberia","country_code":"LR","latitude":44.905825,"longitude":-104.174208}]} 
+ headers={'Server': 'nginx', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Powered-By': 'PHP/8.3.8', 'Cache-Control': 'no-cache, private', 'Date': 'Wed, 26 Feb 2025 12:25:45 GMT', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'Access-Control-Allow-Origin': '*', 'X-UA-Compatible': 'IE=Edge,chrome=1', 'Content-Encoding': 'gzip'} 
+ body={"status":"OK","code":200,"locale":"en_US","seed":null,"total":2,"data":[{"id":1,"street":"960 Veum Unions Apt. 796","streetName":"Durgan Field","buildingNumber":"68053","city":"North Elmer","zipcode":"78690","country":"St. Lucia","country_code":"LC","latitude":-68.426049,"longitude":28.907243},{"id":2,"street":"741 Pouros Avenue Apt. 319","streetName":"Verda Islands","buildingNumber":"197","city":"Port Everetteborough","zipcode":"56782-0183","country":"Seychelles","country_code":"SC","latitude":36.774308,"longitude":-165.543561}]} 
  </msg>
-<msg time="2025-02-25T23:34:10.690528" level="INFO">/home/marcelo/Desenvolvimento/Aprendendo_Robot/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerapi.it'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-02-26T09:25:45.791301" level="INFO">/home/marcelo/Desenvolvimento/Aprendendo_Robot/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerapi.it'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-02-25T23:34:10.691332" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<msg time="2025-02-26T09:25:45.791597" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
 <var>${RESPONSE}</var>
 <arg>alias=faker_api</arg>
-<arg>url=addresses?_quantity=1</arg>
+<arg>url=addresses?_quantity=2</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-02-25T23:34:09.353525" elapsed="1.338229"/>
+<status status="PASS" start="2025-02-26T09:25:44.338119" elapsed="1.453567"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${RESPONSE}</arg>
+<arg>${RESPONSE.json()['data'][1]['country']}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-25T23:34:10.692269" elapsed="0.000792"/>
+<status status="PASS" start="2025-02-26T09:25:45.792057" elapsed="0.000720"/>
 </kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-26T09:25:45.793300" level="INFO">${var} = Seychelles</msg>
+<var>${var}</var>
+<arg>${RESPONSE.json()['data'][1]['country']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-26T09:25:45.792966" elapsed="0.000396"/>
+</kw>
+<if>
+<branch type="IF" condition="'${var}'=='Brazil'">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${RESPONSE.text}</arg>
+<arg>Estamos no Brazil!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-25T23:34:10.693567" elapsed="0.001122"/>
+<status status="NOT RUN" start="2025-02-26T09:25:45.793872" elapsed="0.000065"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-02-25T23:34:11.915197" level="INFO">GET Request : url=https://fakerapi.it/api/v1/books?_quantity=1 
- path_url=/api/v1/books?_quantity=1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-02-25T23:34:11.915651" level="INFO">GET Response : url=https://fakerapi.it/api/v1/books?_quantity=1 
- status=200, reason=OK 
- headers={'Server': 'nginx', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Powered-By': 'PHP/8.3.8', 'Cache-Control': 'no-cache, private', 'Date': 'Wed, 26 Feb 2025 02:34:11 GMT', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'Access-Control-Allow-Origin': '*', 'X-UA-Compatible': 'IE=Edge,chrome=1', 'Content-Encoding': 'gzip'} 
- body={"status":"OK","code":200,"locale":"en_US","seed":null,"total":1,"data":[{"id":1,"title":"Queen never left.","author":"Willa Douglas","genre":"Et","description":"There ought to be a great crowd assembled about them--all sorts of things--I can't remember things as I get it home?' when it saw mine coming!' 'How do you know about it, you know--' 'But, it goes.","isbn":"9786280983493","image":"http:\/\/placeimg.com\/480\/640\/any","published":"2019-10-03","publisher":"Eveniet Eos"}]} 
- </msg>
-<msg time="2025-02-25T23:34:11.915916" level="INFO">/home/marcelo/Desenvolvimento/Aprendendo_Robot/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerapi.it'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-02-25T23:34:11.916453" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
-<var>${RESPONSE}</var>
-<arg>alias=faker_api</arg>
-<arg>url=books?_quantity=1</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-02-25T23:34:10.695051" elapsed="1.221559"/>
-</kw>
+<status status="NOT RUN" start="2025-02-26T09:25:45.793621" elapsed="0.000372"/>
+</branch>
+<branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${RESPONSE}</arg>
+<arg>Estamos em ${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-25T23:34:11.917077" elapsed="0.000903"/>
+<status status="PASS" start="2025-02-26T09:25:45.794137" elapsed="0.000144"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${RESPONSE.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-25T23:34:11.918417" elapsed="0.002475"/>
-</kw>
-<status status="PASS" start="2025-02-25T23:34:09.351519" elapsed="2.569820"/>
+<status status="PASS" start="2025-02-26T09:25:45.794046" elapsed="0.000297"/>
+</branch>
+<status status="PASS" start="2025-02-26T09:25:45.793591" elapsed="0.000780"/>
+</if>
+<status status="PASS" start="2025-02-26T09:25:44.336524" elapsed="1.457979"/>
 </test>
-<status status="PASS" start="2025-02-25T23:34:09.287909" elapsed="2.635145"/>
+<status status="PASS" start="2025-02-26T09:25:44.269295" elapsed="1.525697"/>
 </suite>
-<status status="PASS" start="2025-02-25T23:34:09.277554" elapsed="2.647493"/>
+<status status="PASS" start="2025-02-26T09:25:44.259051" elapsed="1.536604"/>
 </suite>
 <statistics>
 <total>
