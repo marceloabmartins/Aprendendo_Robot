@@ -1,71 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-02-27T09:03:32.838506" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-02-27T10:29:31.699707" rpa="false" schemaversion="5">
 <suite id="s1" name="Aprendendo Robot" source="/home/marcelo/Desenvolvimento/Aprendendo_Robot">
-<suite id="s1-s1" name="Post Serverest" source="/home/marcelo/Desenvolvimento/Aprendendo_Robot/post_serverest.robot">
-<test id="s1-s1-t1" name="Fazendo um Post" line="9">
+<suite id="s1-s1" name="Delete Serverest" source="/home/marcelo/Desenvolvimento/Aprendendo_Robot/delete_serverest.robot">
+<test id="s1-s1-t1" name="Realizando Delete" line="9">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-02-27T09:03:32.911129" level="INFO">Creating Session using : alias=server_rest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-02-27T10:29:31.775032" level="INFO">Creating Session using : alias=server_rest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>alias=server_rest</arg>
 <arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-02-27T09:03:32.910800" elapsed="0.000537"/>
+<status status="PASS" start="2025-02-27T10:29:31.774683" elapsed="0.000607"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-27T09:03:32.911903" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<var>${header}</var>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-27T09:03:32.911636" elapsed="0.000336"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-02-27T09:03:33.329816" level="INFO">POST Request : url=https://serverest.dev/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '116'} 
- body={ "nome": "Fulano da Silva Sauro", "email": "fulanosauro@qa4.com.br", "password": "teste", "administrador": "true" } 
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-02-27T10:29:37.210809" level="INFO">DELETE Request : url=https://serverest.dev/usuarios/c8d2nsnXV2TLDFPB 
+ path_url=/usuarios/c8d2nsnXV2TLDFPB 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
  </msg>
-<msg time="2025-02-27T09:03:33.330238" level="INFO">POST Response : url=https://serverest.dev/usuarios 
- status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'd24a74432e363374f26a1cb3e19dfed4;o=1', 'Date': 'Thu, 27 Feb 2025 12:03:33 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+<msg time="2025-02-27T10:29:37.211028" level="INFO">DELETE Response : url=https://serverest.dev/usuarios/c8d2nsnXV2TLDFPB 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'cda292347e412cd280ca4c9f5518f1a9;o=1', 'Date': 'Thu, 27 Feb 2025 13:29:37 GMT', 'Server': 'Google Frontend', 'Content-Length': '51'} 
  body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "HcTEbJIfxlCFKGpU"
+    "message": "Registro excluído com sucesso"
 } 
  </msg>
-<msg time="2025-02-27T09:03:33.330517" level="INFO">/home/marcelo/Desenvolvimento/Aprendendo_Robot/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-02-27T09:03:33.331296" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<var>${Response}</var>
+<msg time="2025-02-27T10:29:37.211179" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
 <arg>alias=server_rest</arg>
-<arg>url=/usuarios</arg>
-<arg>expected_status=201</arg>
-<arg>headers=${header}</arg>
-<arg>data={ "nome": "Fulano da Silva Sauro", "email": "fulanosauro@qa4.com.br", "password": "teste", "administrador": "true" }</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-02-27T09:03:32.912180" elapsed="0.419357"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-27T09:03:33.333629" level="INFO">${msg} = Cadastro realizado com sucesso</msg>
-<var>${msg}</var>
-<arg>${Response.json()['message']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-27T09:03:33.332240" elapsed="0.001617"/>
+<arg>url=/usuarios/c8d2nsnXV2TLDFPB</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-02-27T10:29:31.775623" elapsed="5.435604"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${msg}</arg>
+<arg>${RESPONSE.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-27T09:03:33.334514" elapsed="0.000797"/>
+<status status="PASS" start="2025-02-27T10:29:37.211788" elapsed="0.000440"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${msg}</arg>
-<arg>Cadastro realizado com sucesso</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-02-27T09:03:33.335847" elapsed="0.000591"/>
-</kw>
-<status status="PASS" start="2025-02-27T09:03:32.910142" elapsed="0.426649"/>
+<status status="PASS" start="2025-02-27T10:29:31.773950" elapsed="5.438444"/>
 </test>
-<status status="PASS" start="2025-02-27T09:03:32.851280" elapsed="0.486825"/>
+<status status="PASS" start="2025-02-27T10:29:31.712930" elapsed="5.499930"/>
 </suite>
-<status status="PASS" start="2025-02-27T09:03:32.840407" elapsed="0.499347"/>
+<status status="PASS" start="2025-02-27T10:29:31.701745" elapsed="5.511827"/>
 </suite>
 <statistics>
 <total>
@@ -75,7 +51,7 @@
 </tag>
 <suite>
 <stat name="Aprendendo Robot" id="s1" pass="1" fail="0" skip="0">Aprendendo Robot</stat>
-<stat name="Post Serverest" id="s1-s1" pass="1" fail="0" skip="0">Aprendendo Robot.Post Serverest</stat>
+<stat name="Delete Serverest" id="s1-s1" pass="1" fail="0" skip="0">Aprendendo Robot.Delete Serverest</stat>
 </suite>
 </statistics>
 <errors>

@@ -15,7 +15,7 @@ Fazendo um Post
     ${Response}    POST On Session    alias=server_rest    url=/usuarios    expected_status=201    headers=${header}    data={ "nome": "Fulano da Silva Sauro", "email": "fulanosauro@qa4.com.br", "password": "teste", "administrador": "true" }
 
     ${msg}    Set Variable    ${Response.json()['message']}
-    Log To Console    ${msg.json()}
+    Log To Console    ${msg}
 
     Should Be Equal    ${msg}    Cadastro realizado com sucesso
 
