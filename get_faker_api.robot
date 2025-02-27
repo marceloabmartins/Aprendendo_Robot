@@ -105,4 +105,5 @@ Teste com For
     
     Log To Console    Sai do loop com esse pais -> ${var}
 
+
 *** Keywords ***
